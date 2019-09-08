@@ -1,0 +1,104 @@
+{
+    "groups": [
+        {
+            "key": "base",
+            "name": "Basic",
+            "groups": [
+                {
+                    "key": "Module",
+                    "name": "Module visible",
+                    "options": [
+                        {
+                            "key": "Indicator",
+                            "name": "Indicator",
+                            "text": "Indicator",
+                            "hide": true,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "Network",
+                            "name": "Network",
+                            "text": "Network",
+                            "hide": true,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "Notify",
+                            "name": "Notify",
+                            "text": "Notify",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "Power",
+                            "name": "Power",
+                            "text": "Power",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "Search",
+                            "name": "Search",
+                            "text": "Search",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "Sound",
+                            "name": "Sound",
+                            "text": "Sound",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "System-tray",
+                            "name": "System-tray",
+                            "text": "System-tray",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "SystemInfo",
+                            "name": "System Info",
+                            "text": "System Info",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }, {
+                            "key": "Time",
+                            "name": "Time",
+                            "text": "Time",
+                            "hide": false,
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }
+
+                    ]
+                },
+                {
+                    "key": "base_setting",
+                    "name": "Base Setting",
+                    "options": [
+                        {
+                            "key": "enable_dock",
+                            "name": "Enable Dock tray",
+                            "text": "Enable Dock tray",
+                            "reset": false,
+                            "type": "checkbox",
+                            "default": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

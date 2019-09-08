@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Icons/battery-charging-status.svg</file>
+        <file>Icons/battery.svg</file>
+        <file>Icons/low-battery.svg</file>
+        <file>Icons/full-battery.svg</file>
+        <file>Icons/half-battery.svg</file>
+    </qresource>
+</RCC>
