@@ -65,13 +65,16 @@ MainFrame::~MainFrame()
 
 void MainFrame::init()
 {
+ 	
     m_desktopWidget = QApplication::desktop();
-
+    setWindowFlags(Qt::X11BypassWindowManagerHint); 
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowDoesNotAcceptFocus);
     setBlendMode(DBlurEffectWidget::BehindWindowBlend);
     setAttribute(Qt::WA_TranslucentBackground);
     setMaskColor(DBlurEffectWidget::DarkColor);
-
+    setFull(true);	
+    DPlatformWindowHandle handle(this);	
+    handle.setShadowColor(QColor(0, 0, 0, 0));	
     m_mainPanel = new dtb::MainPanel(this);
 
 //    m_showWithLauncher =new QPropertyAnimation(m_mainPanel, "pos", m_mainPanel);
@@ -96,13 +99,14 @@ void MainFrame::initConnect()
 {
     connect(m_desktopWidget, &QDesktopWidget::resized, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
     connect(m_desktopWidget, &QDesktopWidget::primaryScreenChanged, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
-
+  connect(m_desktopWidget, &QDesktopWidget::workAreaResized, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
     connect(m_dockInter, &DockInter::DisplayModeChanged, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
     connect(m_dockInter, &DockInter::HideModeChanged, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
     connect(m_dockInter, &DockInter::PositionChanged, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
     connect(m_dockInter, &DockInter::IconSizeChanged, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
     connect(m_dockInter, &DockInter::FrontendWindowRectChanged, this, &MainFrame::delayedScreenChanged, Qt::QueuedConnection);
 }
+
 
 void MainFrame::initAnimation()
 {
